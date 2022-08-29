@@ -33,4 +33,6 @@ public class WechatConfig {
         template.afterPropertiesSet();
         return template;
     }
+
+
 }
