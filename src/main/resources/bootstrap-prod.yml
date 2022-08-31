@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 46defbb8-ccb5-4b77-8771-fa13e0a51987
+        group: WECHAT_MP
+        file-extension: yml
+        extension-configs:
+          - data-id: miniprogram-base-info.yml
+            group: WECHAT_MP
+            refresh: true
+
