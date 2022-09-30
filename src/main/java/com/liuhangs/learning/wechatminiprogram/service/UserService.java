@@ -31,17 +31,17 @@ public class UserService {
     private static final String AUTH_CODE_URL = "https://api.weixin.qq.com/sns/jscode2session";
 
     @Value(value = "${miniprogram.app.id}")
-    private String APP_ID;
+    private String appId;
 
     @Value(value = "${miniprogram.app.secret}")
-    private String APP_SECRET;
+    private String appSecret;
 
     private final RedisTemplate<String, Object> redisTemplate;
 
     public String createSession(String authCode) {
         Map<String, String> params = new HashMap<>();
-        params.put("appid", APP_ID);
-        params.put("secret", APP_SECRET);
+        params.put("appid", appId);
+        params.put("secret", appSecret);
         params.put("js_code", authCode);
         params.put("grant_type", "authorization_code");
         AuthCodeDTO authCodeDTO = HttpUtils.doGet(AUTH_CODE_URL, params, AuthCodeDTO.class);
