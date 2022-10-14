@@ -54,6 +54,8 @@ public class UserService {
         String bizSession = StringUtils.remove(UUID.randomUUID().toString(), "-");
         redisTemplate.opsForValue().set(Constants.OPEN_ID_KEY + bizSession, authCodeDTO.getOpenid(), 30, TimeUnit.MINUTES);
         redisTemplate.opsForValue().set(Constants.SESSION_KEY + bizSession, authCodeDTO.getSession_key(), 30, TimeUnit.MINUTES);
+        // 判断用户是否已经绑定
+
         return bizSession;
     }
 }

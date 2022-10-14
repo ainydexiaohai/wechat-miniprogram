@@ -2,7 +2,7 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 127.0.0.1:8848
+        server-addr: liuhangs.top:8848
         namespace: fcd7a33c-b961-434d-aa97-3dfe68e10904
         group: WECHAT_MP
         file-extension: yml
